@@ -1,6 +1,7 @@
 var http = require('http');
 
-http.onRequest(request, response) {
+ function onRequest(request, response) {
+    console.log('Request recieved.');
     response.writeHead(200, {'Content-Type': 'text/plain'});
     response.write('Hello World');
     response.end();
@@ -8,8 +9,10 @@ http.onRequest(request, response) {
 
 http.createServer(onRequest).listen(8888);
 
-function execute(someFunction, value) {
-    someFunction(value);
-}
+console.log('Server has started');
 
-execute(function(word) { console.log(word) }, 'Hello');
+// function execute(someFunction, value) {
+//     someFunction(value);
+// }
+
+// execute(function(word) { console.log(word) }, 'Hello');
