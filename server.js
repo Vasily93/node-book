@@ -5,3 +5,13 @@ http.createServer(function(request, response) {
     response.write('Hello World');
     response.end();
 }).listen(8888);
+
+function say(word) {
+    console.log(word);
+}
+
+function execute(someFunction, value) {
+    someFunction(value);
+}
+
+execute(say, 'Hello');
